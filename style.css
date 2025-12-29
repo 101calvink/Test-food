@@ -1,0 +1,151 @@
+:root {
+  --bg-dark: #0c0d10;
+  --bun-gold: #d2a24a;
+  --lettuce-green: #7aa83f;
+  --ketchup-red: #b02a2a;
+  --cheese-yellow: #f2c94c;
+  --text-light: #f5f5f5;
+  --text-muted: #bdbdbd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+}
+
+.logo {
+  font-size: 28px;
+}
+
+nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: var(--bun-gold);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--cheese-yellow);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+.hero-left {
+  max-width: 520px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 2px dashed var(--lettuce-green);
+  color: var(--lettuce-green);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero-left h1 {
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--ketchup-red);
+}
+
+.hero-left h1 span {
+  color: var(--bun-gold);
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.arrows {
+  margin-top: 18px;
+  font-size: 22px;
+  letter-spacing: 6px;
+  color: var(--cheese-yellow);
+}
+
+.delivery {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* IMAGE SIDE */
+.hero-right {
+  position: relative;
+}
+
+.hero-right img {
+  width: 420px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.7));
+}
+
+/* GREEN STARBURST */
+.burst {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: var(--lettuce-green);
+  clip-path: polygon(
+    50% 0%, 60% 35%, 100% 50%, 60% 65%,
+    50% 100%, 40% 65%, 0% 50%, 40% 35%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero-right {
+    margin-top: 50px;
+  }
+
+  .hero-right img {
+    width: 300px;
+  }
+
+  .burst {
+    width: 260px;
+    height: 260px;
+  }
+}
